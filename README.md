@@ -74,7 +74,7 @@ A production-ready, Arabic-first conversational AI backend powered by **LangChai
 
 ### Prerequisites
 
-- Python 3.10+
+- Python 3.13+
 - PostgreSQL 14+ with the [`pgvector`](https://github.com/pgvector/pgvector) extension installed
 - A [Hugging Face](https://huggingface.co/) account and API token
 
@@ -129,7 +129,7 @@ psql -U postgres -d chatbot -f migrate.sql
 uvicorn api:api --reload --host 127.0.0.1 --port 8000
 ```
 
-### 5. Launch the Gradio UI *(optional)*
+### 5. Launch the Gradio UI
 
 In a separate terminal:
 
@@ -210,20 +210,6 @@ CREATE TABLE chat_messages (
 
 ---
 
-## 🛠️ Development
-
-### Run tests *(coming soon)*
-
-```bash
-pytest tests/
-```
-
-### Linting
-
-```bash
-ruff check .
-```
-
 ### Environment variables reference
 
 | Variable | Default | Description |
@@ -250,16 +236,6 @@ ruff check .
 | Database | PostgreSQL 14+ + pgvector |
 | Embeddings | `sentence-transformers` — MiniLM-L12-v2 (384-dim) |
 | Driver | psycopg2 (threaded connection pool) |
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'feat: add your feature'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a Pull Request
 
 ---
 
