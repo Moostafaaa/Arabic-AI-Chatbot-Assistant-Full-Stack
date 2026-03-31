@@ -37,7 +37,7 @@ A production-ready, Arabic-first conversational AI backend powered by **LangChai
 ```
 ┌────────────────────────────────────────────────────────┐
 │                     Client Layer                       │
-│   Gradio UI (ui_gradio_api.py)  │  Direct API Calls   │
+│   Gradio UI (ui_gradio_api.py)  │  Direct API Calls    │
 └─────────────────────┬──────────────────────────────────┘
                       │ HTTP (REST)
 ┌─────────────────────▼──────────────────────────────────┐
@@ -51,16 +51,16 @@ A production-ready, Arabic-first conversational AI backend powered by **LangChai
 │   (app.py)          │    │   (embeddings.py)          │
 │                     │    │   sentence-transformers    │
 │  LangChain Runnable │    │   paraphrase-multilingual  │
-│  + Message History  │    │   MiniLM-L12-v2 (384-dim) │
+│  + Message History  │    │   MiniLM-L12-v2 (384-dim)  │
 └──────┬──────────────┘    └────────────┬───────────────┘
        │                                │
 ┌──────▼────────────────────────────────▼───────────────┐
-│             PostgreSQL + pgvector  (db.py)             │
-│                  chat_messages table                   │
+│             PostgreSQL + pgvector  (db.py)            │
+│                  chat_messages table                  │
 │   id │ session_id │ role │ content │ embedding │ ts   │
-│                                                        │
+│                                                       │
 │  Indexes: session_id (B-Tree) · embedding (IVFFlat)   │
-└────────────────────────────────────────────────────────┘
+└───────────────────────────────────────────────────────┘
                       │
 ┌─────────────────────▼──────────────────────────────────┐
 │           Hugging Face LLM Router                      │
